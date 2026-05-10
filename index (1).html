@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>i-Water × Synergy Hub SA — Saudi Arabia Market Entry</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --teal:       #1a8c8c;
+    --teal-dark:  #116060;
+    --teal-mid:   #2ab5b5;
+    --teal-light: #e4f4f4;
+    --teal-xlight:#f0fafa;
+    --water:      #0077a8;
+    --dark:       #0f2020;
+    --mid:        #3a5050;
+    --muted:      #7a9898;
+    --border:     #c8dfe0;
+    --bg:         #f5fafa;
+    --white:      #ffffff;
+    --accent:     #00c4a0;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    min-height: 100vh;
+  }
+
+  /* ── Header ─────────────────────────────── */
+  .site-header {
+    background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 50%, var(--teal-mid) 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    border: 80px solid rgba(255,255,255,0.04);
+    top: -200px; right: -150px;
+    pointer-events: none;
+  }
+  .site-header::after {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    border: 50px solid rgba(255,255,255,0.06);
+    bottom: -100px; left: -80px;
+    pointer-events: none;
+  }
+  .top-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    font-size: 12px; color: rgba(255,255,255,0.75);
+    letter-spacing: 0.5px;
+  }
+  .top-bar strong { color: #fff; }
+  .header-body {
+    padding: 48px 40px 52px;
+    position: relative; z-index: 1;
+    max-width: 900px; margin: 0 auto;
+  }
+  .brand-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 12px; color: rgba(255,255,255,0.9);
+    letter-spacing: 1px; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .brand-badge span { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; display: inline-block; }
+  h1.hero-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  h1.hero-title em { color: var(--accent); font-style: italic; }
+  .hero-sub {
+    font-size: 15px; color: rgba(255,255,255,0.75);
+    max-width: 560px; line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  .hero-meta {
+    display: flex; gap: 28px; flex-wrap: wrap;
+    font-size: 13px; color: rgba(255,255,255,0.6);
+  }
+  .hero-meta span { display: flex; align-items: center; gap: 6px; }
+  .hero-meta svg { opacity: 0.7; }
+
+  /* ── Progress Bar ───────────────────────── */
+  .progress-wrap {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 40px;
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .progress-inner { max-width: 900px; margin: 0 auto; }
+  .progress-labels {
+    display: flex; justify-content: space-between;
+    font-size: 11px; color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .progress-labels strong { color: var(--teal); font-size: 12px; }
+  .progress-bar {
+    height: 5px; background: var(--teal-light);
+    border-radius: 10px; overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--teal), var(--accent));
+    border-radius: 10px;
+    width: 0%;
+    transition: width 0.4s ease;
+  }
+
+  /* ── Main Layout ─────────────────────────── */
+  .main { max-width: 900px; margin: 0 auto; padding: 40px 40px 80px; }
+
+  /* ── Section Cards ───────────────────────── */
+  .section-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .section-card:hover { box-shadow: 0 8px 32px rgba(26,140,140,0.10); }
+
+  .section-head {
+    display: flex; align-items: center; gap: 14px;
+    padding: 20px 28px;
+    background: linear-gradient(90deg, var(--teal-dark), var(--teal));
+    cursor: pointer;
+    user-select: none;
+  }
+  .section-head.accent-water {
+    background: linear-gradient(90deg, #005a80, var(--water));
+  }
+  .section-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    border: 2px solid rgba(255,255,255,0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 600; color: #fff;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px; color: #fff; flex: 1;
+  }
+  .section-chevron {
+    color: rgba(255,255,255,0.7);
+    transition: transform 0.3s;
+    font-size: 18px;
+  }
+  .section-head.open .section-chevron { transform: rotate(180deg); }
+  .section-complete {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--accent);
+    display: none; align-items: center; justify-content: center;
+    font-size: 12px; color: #fff; font-weight: 700;
+  }
+  .section-complete.visible { display: flex; }
+
+  .section-body {
+    padding: 28px;
+    display: none;
+    animation: fadeIn 0.25s ease;
+  }
+  .section-body.open { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ── Form Elements ───────────────────────── */
+  .q-group { margin-bottom: 24px; }
+  .q-label {
+    font-size: 14px; font-weight: 600; color: var(--dark);
+    margin-bottom: 6px; display: block;
+  }
+  .q-note {
+    font-size: 12px; color: var(--muted); margin-bottom: 10px;
+    font-style: italic;
+  }
+
+  /* Text inputs */
+  input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+    width: 100%;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--dark);
+    background: var(--teal-xlight);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+  input[type="text"]:focus, input[type="email"]:focus,
+  input[type="tel"]:focus, textarea:focus, select:focus {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(26,140,140,0.12);
+    background: var(--white);
+  }
+  textarea { min-height: 90px; resize: vertical; }
+
+  /* Two column grid */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  @media (max-width: 620px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .main { padding: 24px 20px 60px; }
+    .top-bar { padding: 10px 20px; }
+    .header-body { padding: 32px 20px 36px; }
+    .progress-wrap { padding: 14px 20px; }
+  }
+
+  /* Checkbox / Radio options */
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+  }
+  .option-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 11px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s;
+    background: var(--teal-xlight);
+    font-size: 13.5px; color: var(--mid);
+    line-height: 1.4;
+  }
+  .option-item:hover {
+    border-color: var(--teal-mid);
+    background: var(--teal-light);
+    color: var(--dark);
+  }
+  .option-item.selected {
+    border-color: var(--teal);
+    background: var(--teal-light);
+    color: var(--teal-dark);
+    font-weight: 500;
+  }
+  .option-item input[type="checkbox"],
+  .option-item input[type="radio"] {
+    width: 16px; height: 16px;
+    accent-color: var(--teal);
+    margin-top: 1px;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  /* Sub-section label */
+  .sub-label {
+    font-size: 12px; font-weight: 600; color: var(--water);
+    text-transform: uppercase; letter-spacing: 1px;
+    margin: 20px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--teal-light);
+  }
+
+  /* ── Navigation Buttons ───────────────────── */
+  .nav-row {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 24px; padding-top: 20px;
+    border-top: 1px solid var(--teal-light);
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 24px;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px; font-weight: 600;
+    cursor: pointer; border: none;
+    transition: all 0.2s;
+  }
+  .btn-outline {
+    background: transparent;
+    border: 1.5px solid var(--border);
+    color: var(--mid);
+  }
+  .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--teal), var(--teal-mid));
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(26,140,140,0.25);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(26,140,140,0.35);
+  }
+
+  /* ── Submit Section ───────────────────────── */
+  .submit-card {
+    background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    color: #fff;
+    margin-top: 28px;
+  }
+  .submit-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px; margin-bottom: 10px;
+  }
+  .submit-card p { color: rgba(255,255,255,0.8); margin-bottom: 24px; font-size: 14px; }
+  .btn-submit {
+    background: var(--accent);
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 36px;
+    border-radius: 10px;
+    border: none; cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0,196,160,0.4);
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,196,160,0.5); }
+
+  /* ── Thank You Screen ─────────────────────── */
+  #thank-you {
+    display: none;
+    text-align: center;
+    padding: 80px 40px;
+  }
+  #thank-you .ty-icon {
+    font-size: 64px; margin-bottom: 20px;
+  }
+  #thank-you h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px; color: var(--teal); margin-bottom: 12px;
+  }
+  #thank-you p { color: var(--mid); font-size: 15px; line-height: 1.7; max-width: 500px; margin: 0 auto; }
+
+  /* ── Divider ──────────────────────────────── */
+  .divider { border: none; border-top: 1px solid var(--teal-light); margin: 20px 0; }
+
+  /* ── Watermark footer ─────────────────────── */
+  .site-footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+  .site-footer strong { color: var(--teal); }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ───────────────────────────────────────────── -->
+<header class="site-header">
+  <div class="top-bar">
+    <span><strong>Synergy Hub SA</strong> — Saudi Arabia Market Entry Specialists</span>
+    <span>Confidential Document · May 2026</span>
+  </div>
+  <div class="header-body">
+    <div class="brand-badge"><span></span> i-Water × Synergy Hub SA</div>
+    <h1 class="hero-title">Saudi Arabia Market Entry<br/><em>Discovery Questionnaire</em></h1>
+    <p class="hero-sub">This questionnaire has been tailored exclusively for i-Water to help Synergy Hub SA design the most effective and compliant market entry strategy for the Kingdom of Saudi Arabia.</p>
+    <div class="hero-meta">
+      <span>📍 Belgium → Saudi Arabia</span>
+      <span>⏱ ~15 minutes to complete</span>
+      <span>🔒 Strictly confidential</span>
+    </div>
+  </div>
+</header>
+
+<!-- ── PROGRESS ─────────────────────────────────────────── -->
+<div class="progress-wrap">
+  <div class="progress-inner">
+    <div class="progress-labels">
+      <span>Progress</span>
+      <strong id="progress-text">Section 1 of 10</strong>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+  </div>
+</div>
+
+<!-- ── MAIN FORM ─────────────────────────────────────────── -->
+<div class="main" id="form-area">
+<form id="qform" onsubmit="handleSubmit(event)">
+
+  <!-- ════ SECTION 1: Company Info ════ -->
+  <div class="section-card" id="sec1">
+    <div class="section-head open" onclick="toggleSection('sec1')">
+      <div class="section-num">1</div>
+      <div class="section-title">Company & Contact Information</div>
+      <div class="section-complete" id="comp1">✓</div>
+      <div class="section-chevron">▾</div>
+    </div>
+    <div class="section-body open">
+      <div class="grid-2">
+        <div class="q-group">
+          <label class="q-label">Company Legal Name *</label>
+          <input type="text" placeholder="e.g. i-Water BV" required/>
+        </div>
+        <div class="q-group">
+          <label class="q-label">Trading Name (if different)</label>
+          <input type="text" placeholder="Trading name"/>
+        </div>
+        <div class="q-group">
+          <label class="q-label">Country of Incorporation *</label>
+          <input type="text" placeholder="Belgium" required/>
+        </div>
+        <div class="q-group">
+          <label class="q-label">Company Registration Number</label>
+          <input type="text" placeholder="BE XXXX.XXX.XXX"/>
+        </div>
+        <div class="q-group">
+          <label class="q-label">Contact Person *</label>
+          <input type="text" placeholder="Full name" required/>
+        </div>
+        <div class="q-group">
+          <label class="q-label">Job Title *</label>
+          <input type="text" placeholder="e.g. CEO / Managing Director" required/>
+        </div>
+        <div class="q-group">
+          <label class="q-label">Email Address *</label>
+          <input type="email" placeholder="email@company.com" required/>
+        </div>
+        <div class="q-group">
+          <label class="q-label">Phone / WhatsApp</label>
+          <input type="tel" placeholder="+32 ..."/>
+        </div>
+        <div class="q-group">
+          <label class="q-label">Company Website</label>
+          <input type="text" placeholder="https://www.i-water.be"/>
+        </div>
+        <div class="q-group">
+          <label class="q-label">LinkedIn / Social Media</label>
+          <input type="text" placeholder="LinkedIn URL or handle"/>
+        </div>
+      </div>
+      <div class="q-group">
+        <label class="q-label">Company Headquarters Address</label>
+        <input type="text" placeholder="Street, City, Postcode, Country"/>
+      </div>
+      <div class="nav-row">
+        <span></span>
+        <button type="button" class="btn btn-primary" onclick="nextSection('sec1','sec2')">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ SECTION 2: Products & Industries ════ -->
+  <div class="section-card" id="sec2">
+    <div class="section-head accent-water" onclick="toggleSection('sec2')">
+      <div class="section-num">2</div>
+      <div class="section-title">Products & Target Industries</div>
+      <div class="section-complete" id="comp2">✓</div>
+      <div class="section-chevron">▾</div>
+    </div>
+    <div class="section-body">
+      <div class="q-group">
+        <label class="q-label">Which i-Water product lines will you bring to Saudi Arabia?</label>
+        <p class="q-note">Select all that apply.</p>
+        <div class="options-grid">
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> i-Water Control: Sensor Unit</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> i-Water Control: Plug &amp; Play</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> i-Alka+ (Alkalinity Stabilization)</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> i-Bact+ (Biological Treatment)</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> i-Phos (Phosphate Control)</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> i-Clarifier (Water Clarity)</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Full Technical Solutions Portfolio</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Full Natural Solutions Portfolio</label>
+        </div>
+      </div>
+      <div class="q-group">
+        <label class="q-label">Target industries / applications in KSA:</label>
+        <div class="options-grid">
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Residential Swimming Pools</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Commercial / Hotel Pools</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Natural / Ornamental Ponds</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Water Lagoons (Mega Projects)</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Industrial Water Treatment</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Agriculture / Irrigation</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Wastewater Treatment</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Aquariums / Zoos / Marine Systems</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> NEOM / Giga Projects</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Desalination Support</label>
+        </div>
+      </div>
+      <div class="q-group">
+        <label class="q-label">Key competitive advantage in the KSA market context:</label>
+        <textarea placeholder="e.g. proprietary sensor technology, real-time automated dosing, eco-friendly natural products, plug & play simplicity…"></textarea>
+      </div>
+      <div class="nav-row">
+        <button type="button" class="btn btn-outline" onclick="prevSection('sec2','sec1')">← Back</button>
+        <button type="button" class="btn btn-primary" onclick="nextSection('sec2','sec3')">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ SECTION 3: Legal Structure ════ -->
+  <div class="section-card" id="sec3">
+    <div class="section-head" onclick="toggleSection('sec3')">
+      <div class="section-num">3</div>
+      <div class="section-title">Legal Entity & Market Entry Structure</div>
+      <div class="section-complete" id="comp3">✓</div>
+      <div class="section-chevron">▾</div>
+    </div>
+    <div class="section-body">
+      <div class="q-group">
+        <label class="q-label">Preferred legal structure for Saudi Arabia:</label>
+        <p class="q-note">Note: Foreign companies typically enter as a Branch Office or LLC. Free Zone entities are also available. Synergy Hub SA will advise on the best fit.</p>
+        <div class="options-grid">
+          <label class="option-item"><input type="radio" name="legal" onchange="toggleSelected(this)"/> LLC — Mainland</label>
+          <label class="option-item"><input type="radio" name="legal" onchange="toggleSelected(this)"/> Branch Office of Foreign Company</label>
+          <label class="option-item"><input type="radio" name="legal" onchange="toggleSelected(this)"/> Free Zone Entity (KAEC, SPARK, etc.)</label>
+          <label class="option-item"><input type="radio" name="legal" onchange="toggleSelected(this)"/> Representative / Liaison Office</label>
+          <label class="option-item"><input type="radio" name="legal" onchange="toggleSelected(this)"/> Joint Venture with Saudi Partner</label>
+          <label class="option-item"><input type="radio" name="legal" onchange="toggleSelected(this)"/> Not decided — need guidance</label>
+        </div>
+      </div>
+      <div class="q-group">
+        <label class="q-label">Do you have an existing Saudi partner or distributor?</label>
+        <div class="options-grid">
+          <label class="option-item"><input type="radio" name="partner" onchange="toggleSelected(this)"/> Yes — exclusive distributor</label>
+          <label class="option-item"><input type="radio" name="partner" onchange="toggleSelected(this)"/> Yes — non-exclusive partner</label>
+          <label class="option-item"><input type="radio" name="partner" onchange="toggleSelected(this)"/> In discussions with potential partners</label>
+          <label class="option-item"><input type="radio" name="partner" onchange="toggleSelected(this)"/> No — open to recommendations</label>
+        </div>
+      </div>
+      <div class="q-group">
+        <label class="q-label">Target city / region for initial operations:</label>
+        <div class="options-grid">
+          <label class="option-item"><input type="radio" name="city" onchange="toggleSelected(this)"/> Riyadh</label>
+          <label class="option-item"><input type="radio" name="city" onchange="toggleSelected(this)"/> Jeddah</label>
+          <label class="option-item"><input type="radio" name="city" onchange="toggleSelected(this)"/> Dammam / Eastern Province</label>
+          <label class="option-item"><input type="radio" name="city" onchange="toggleSelected(this)"/> NEOM / Tabuk Region</label>
+          <label class="option-item"><input type="radio" name="city" onchange="toggleSelected(this)"/> Red Sea Project Area</label>
+          <label class="option-item"><input type="radio" name="city" onchange="toggleSelected(this)"/> To be determined</label>
+        </div>
+      </div>
+      <div class="nav-row">
+        <button type="button" class="btn btn-outline" onclick="prevSection('sec3','sec2')">← Back</button>
+        <button type="button" class="btn btn-primary" onclick="nextSection('sec3','sec4')">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ SECTION 4: Timeline ════ -->
+  <div class="section-card" id="sec4">
+    <div class="section-head accent-water" onclick="toggleSection('sec4')">
+      <div class="section-num">4</div>
+      <div class="section-title">Timeline & Launch Plan</div>
+      <div class="section-complete" id="comp4">✓</div>
+      <div class="section-chevron">▾</div>
+    </div>
+    <div class="section-body">
+      <div class="q-group">
+        <label class="q-label">Anticipated launch timeline:</label>
+        <div class="options-grid">
+          <label class="option-item"><input type="radio" name="timeline" onchange="toggleSelected(this)"/> Within 3 months</label>
+          <label class="option-item"><input type="radio" name="timeline" onchange="toggleSelected(this)"/> 3–6 months</label>
+          <label class="option-item"><input type="radio" name="timeline" onchange="toggleSelected(this)"/> 6–12 months</label>
+          <label class="option-item"><input type="radio" name="timeline" onchange="toggleSelected(this)"/> 12+ months / exploratory</label>
+        </div>
+      </div>
+      <div class="q-group">
+        <label class="q-label">Is there a specific project, tender, or client driving your timeline?</label>
+        <input type="text" placeholder="Project or client name (if any)"/>
+      </div>
+      <div class="q-group">
+        <label class="q-label">Vision 2030 giga-projects you are targeting:</label>
+        <p class="q-note">Select all that apply.</p>
+        <div class="options-grid">
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> NEOM — aware &amp; targeting</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Red Sea Project</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Qiddiya</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Diriyah Gate</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> ROSHN / Housing developments</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Not targeting giga-projects</label>
+        </div>
+      </div>
+      <div class="nav-row">
+        <button type="button" class="btn btn-outline" onclick="prevSection('sec4','sec3')">← Back</button>
+        <button type="button" class="btn btn-primary" onclick="nextSection('sec4','sec5')">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ SECTION 5: Workforce ════ -->
+  <div class="section-card" id="sec5">
+    <div class="section-head" onclick="toggleSection('sec5')">
+      <div class="section-num">5</div>
+      <div class="section-title">Workforce & Staffing Plan</div>
+      <div class="section-complete" id="comp5">✓</div>
+      <div class="section-chevron">▾</div>
+    </div>
+    <div class="section-body">
+      <div class="q-group">
+        <label class="q-label">Expected headcount — Year 1:</label>
+        <div class="options-grid">
+          <label class="option-item"><input type="radio" name="hc1" onchange="toggleSelected(this)"/> 1–3 employees</label>
+          <label class="option-item"><input type="radio" name="hc1" onchange="toggleSelected(this)"/> 4–6 employees</label>
+          <label class="option-item"><input type="radio" name="hc1" onchange="toggleSelected(this)"/> 7–10 employees</label>
+          <label class="option-item"><input type="radio" name="hc1" onchange="toggleSelected(this)"/> 11–20 employees</label>
+          <label class="option-item"><input type="radio" name="hc1" onchange="toggleSelected(this)"/> 20+ employees</label>
+          <label class="option-item"><input type="radio" name="hc1" onchange="toggleSelected(this)"/> Not yet determined</label>
+        </div>
+      </div>
+      <div class="q-group">
+        <label class="q-label">Expected headcount — 36 months:</label>
+        <div class="options-grid">
+          <label class="option-item"><input type="radio" name="hc3" onchange="toggleSelected(this)"/> 1–5 employees</label>
+          <label class="option-item"><input type="radio" name="hc3" onchange="toggleSelected(this)"/> 6–10 employees</label>
+          <label class="option-item"><input type="radio" name="hc3" onchange="toggleSelected(this)"/> 11–25 employees</label>
+          <label class="option-item"><input type="radio" name="hc3" onchange="toggleSelected(this)"/> 26–50 employees</label>
+          <label class="option-item"><input type="radio" name="hc3" onchange="toggleSelected(this)"/> 50+ employees</label>
+          <label class="option-item"><input type="radio" name="hc3" onchange="toggleSelected(this)"/> Not yet determined</label>
+        </div>
+      </div>
+      <div class="q-group">
+        <label class="q-label">Hiring strategy:</label>
+        <div class="options-grid">
+          <label class="option-item"><input type="radio" name="hiring" onchange="toggleSelected(this)"/> Primarily Saudi nationals</label>
+          <label class="option-item"><input type="radio" name="hiring" onchange="toggleSelected(this)"/> Primarily Belgian / European expats</label>
+          <label class="option-item"><input type="radio" name="hiring" onchange="toggleSelected(this)"/> Mixed — local + expat</label>
+          <label class="option-item"><input type="radio" name="hiring" onchange="toggleSelected(this)"/> Local sales/admin + expat technical</label>
+          <label class="option-item"><input type="radio" name="hiring" onchange="toggleSelected(this)"/> Starting with one country manager</label>
+        </div>
+      </div>
+      <div class="q-group">
+        <label class="q-label">Key roles you plan to hire in KSA:</label>
+        <p class="q-note">Select all applicable.</p>
+        <div class="options-grid">
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Country / General Manager</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Water Treatment Engineer</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Sales &amp; Business Development</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Application Technician</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Key Account Manager (B2B)</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Technical Support / After-Sales</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Finance / Admin Officer</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Procurement / Logistics</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> HR / People Operations</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Marketing &amp; Communications</label>
+        </div>
+      </div>
+      <div class="q-group">
+        <label class="q-label">Awareness of Saudi Saudization (Nitaqat) requirements:</label>
+        <div class="options-grid">
+          <label class="option-item"><input type="radio" name="nitaqat" onchange="toggleSelected(this)"/> Yes — familiar with Nitaqat</label>
+          <label class="option-item"><input type="radio" name="nitaqat" onchange="toggleSelected(this)"/> Aware but need guidance</label>
+          <label class="option-item"><input type="radio" name="nitaqat" onchange="toggleSelected(this)"/> Not familiar — need full briefing</label>
+        </div>
+      </div>
+      <div class="nav-row">
+        <button type="button" class="btn btn-outline" onclick="prevSection('sec5','sec4')">← Back</button>
+        <button type="button" class="btn btn-primary" onclick="nextSection('sec5','sec6')">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ SECTION 6: Office Setup ════ -->
+  <div class="section-card" id="sec6">
+    <div class="section-head accent-water" onclick="toggleSection('sec6')">
+      <div class="section-num">6</div>
+      <div class="section-title">Office & Operational Setup</div>
+      <div class="section-complete" id="comp6">✓</div>
+      <div class="section-chevron">▾</div>
+    </div>
+    <div class="section-body">
+      <div class="q-group">
+        <label class="q-label">Required office / facility type:</label>
+        <div class="options-grid">
+          <label class="option-item"><input type="radio" name="office" onchange="toggleSelected(this)"/> Virtual Office (address only)</label>
+          <label class="option-item"><input type="radio" name="office" onchange="toggleSelected(this)"/> Serviced / Co-working Office</label>
+          <label class="option-item"><input type="radio" name="office" onchange="toggleSelected(this)"/> Dedicated Leased Office</label>
+          <label class="option-item"><input type="radio" name="office" onchange="toggleSelected(this)"/> Warehouse / Product Storage</label>
+          <label class="option-item"><input type="radio" name="office" onchange="toggleSelected(this)"/> Technical Workshop / Lab</label>
+          <label class="option-item"><input type="radio" name="office" onchange="toggleSelected(this)"/> Full Operational Facility</label>
+          <label class="option-item"><input type="radio" name="office" onchange="toggleSelected(this)"/> Not yet determined</label>
+        </div>
+      </div>
+      <div class="q-group">
+        <label class="q-label">Will you hold physical stock / inventory in KSA?</label>
+        <div class="options-grid">
+          <label class="option-item"><input type="radio" name="stock" onchange="toggleSelected(this)"/> Yes — from Day 1</label>
+          <label class="option-item"><input type="radio" name="stock" onchange="toggleSelected(this)"/> Yes — within 6–12 months</label>
+          <label class="option-item"><input type="radio" name="stock" onchange="toggleSelected(this)"/> No — ship direct from Belgium</label>
+          <label class="option-item"><input type="radio" name="stock" onchange="toggleSelected(this)"/> Not yet decided</label>
+        </div>
+      </div>
+      <div class="q-group">
+        <label class="q-label">After-sales / technical service capability in KSA:</label>
+        <div class="options-grid">
+          <label class="option-item"><input type="radio" name="service" onchange="toggleSelected(this)"/> Full on-site service team</label>
+          <label class="option-item"><input type="radio" name="service" onchange="toggleSelected(this)"/> Partner / distributor managed</label>
+          <label class="option-item"><input type="radio" name="service" onchange="toggleSelected(this)"/> Remote support only initially</label>
+          <label class="option-item"><input type="radio" name="service" onchange="toggleSelected(this)"/> Not required at this stage</label>
+        </div>
+      </div>
+      <div class="nav-row">
+        <button type="button" class="btn btn-outline" onclick="prevSection('sec6','sec5')">← Back</button>
+        <button type="button" class="btn btn-primary" onclick="nextSection('sec6','sec7')">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ SECTION 7: IP & Compliance ════ -->
+  <div class="section-card" id="sec7">
+    <div class="section-head" onclick="toggleSection('sec7')">
+      <div class="section-num">7</div>
+      <div class="section-title">IP, Certifications & Regulatory Compliance</div>
+      <div class="section-complete" id="comp7">✓</div>
+      <div class="section-chevron">▾</div>
+    </div>
+    <div class="section-body">
+      <div class="q-group">
+        <label class="q-label">Existing intellectual property:</label>
+        <div class="options-grid">
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Trademark (Belgium / EU)</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Trademark (other countries)</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Patent (sensor technology)</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Patent (software / algorithm)</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> No IP registered yet</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Trade secrets / know-how</label>
+        </div>
+      </div>
+      <div class="q-group">
+        <label class="q-label">IP actions required in Saudi Arabia:</label>
+        <div class="options-grid">
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Register i-Water trademark (SAIP)</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Trademark search &amp; clearance</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> File patent in KSA</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> GCC-wide trademark protection</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Protect software / firmware IP</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Would like to discuss options</label>
+        </div>
+      </div>
+      <div class="q-group">
+        <label class="q-label">Product certifications required in KSA:</label>
+        <p class="q-note">SASO certification is typically mandatory for products sold in the Kingdom.</p>
+        <div class="options-grid">
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> SASO (Saudi Standards Authority)</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> SFDA (for water chemicals)</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> CE Marking (already have)</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> ISO 9001 / ISO 14001</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> HACCP / Food-safe certification</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Not sure — need regulatory mapping</label>
+        </div>
+      </div>
+      <div class="nav-row">
+        <button type="button" class="btn btn-outline" onclick="prevSection('sec7','sec6')">← Back</button>
+        <button type="button" class="btn btn-primary" onclick="nextSection('sec7','sec8')">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ SECTION 8: Business Model ════ -->
+  <div class="section-card" id="sec8">
+    <div class="section-head accent-water" onclick="toggleSection('sec8')">
+      <div class="section-num">8</div>
+      <div class="section-title">Business Model & Revenue</div>
+      <div class="section-complete" id="comp8">✓</div>
+      <div class="section-chevron">▾</div>
+    </div>
+    <div class="section-body">
+      <div class="q-group">
+        <label class="q-label">How will you generate revenue in KSA?</label>
+        <div class="options-grid">
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Direct product sales (B2B)</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Product sales to consumers (B2C)</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Distributor / reseller channel</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Tender / government contracts</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Service / maintenance contracts</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Licensing / technology transfer</label>
+          <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Mixed model</label>
+        </div>
+      </div>
+      <div class="q-group">
+        <label class="q-label">Average contract / deal size anticipated:</label>
+        <div class="options-grid">
+          <label class="option-item"><input type="radio" name="deal" onchange="toggleSelected(this)"/> Under SAR 50,000</label>
+          <label class="option-item"><input type="radio" name="deal" onchange="toggleSelected(this)"/> SAR 50K – 250K</label>
+          <label class="option-item"><input type="radio" name="deal" onchange="toggleSelected(this)"/> SAR 250K – 1M</label>
+          <label class="option-item"><input type="radio" name="deal" onchange="toggleSelected(this)"/> SAR 1M+</label>
+          <label class="option-item"><input type="radio" name="deal" onchange="toggleSelected(this)"/> Project-based (varies)</label>
+          <label class="option-item"><input type="radio" name="deal" onchange="toggleSelected(this)"/> Not yet estimated</label>
+        </div>
+      </div>
+      <div class="q-group">
+        <label class="q-label">Existing KSA clients or leads?</label>
+        <div class="options-grid">
+          <label class="option-item"><input type="radio" name="leads" onchange="toggleSelected(this)"/> Yes — active client / signed contract</label>
+          <label class="option-item"><input type="radio" name="leads" onchange="toggleSelected(this)"/> Yes — in advanced negotiations</label>
+          <label class="option-item"><input type="radio" name="leads" onchange="toggleSelected(this)"/> Early-stage leads / interest</label>
+          <label class="option-item"><input type="radio" name="leads" onchange="toggleSelected(this)"/> No clients yet</label>
+        </div>
+      </div>
+      <div class="nav-row">
+        <button type="button" class="btn btn-outline" onclick="prevSection('sec8','sec7')">← Back</button>
+        <button type="button" class="btn btn-primary" onclick="nextSection('sec8','sec9')">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ SECTION 9: Services Required ════ -->
+  <div class="section-card" id="sec9">
+    <div class="section-head" onclick="toggleSection('sec9')">
+      <div class="section-num">9</div>
+      <div class="section-title">Services Required from Synergy Hub SA</div>
+      <div class="section-complete" id="comp9">✓</div>
+      <div class="section-chevron">▾</div>
+    </div>
+    <div class="section-body">
+      <p class="q-note" style="margin-bottom:16px;">Please tick all services you would like Synergy Hub SA to provide. We offer a full-circle model — from Day 1 registration through to ongoing HR &amp; payroll management.</p>
+
+      <div class="sub-label">Company Formation &amp; Registration</div>
+      <div class="options-grid">
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Trade name reservation (MISA)</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Commercial Registration (CR)</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Articles of Association</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> National Address registration</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Chamber of Commerce</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> ZATCA registration</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> GOSI registration</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> HRSD registration</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Bank account opening support</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Investor visa facilitation</label>
+      </div>
+
+      <div class="sub-label">Legal &amp; IP</div>
+      <div class="options-grid">
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Shareholder agreement</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> NDA templates</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Client / supply agreements</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Distributor &amp; agent agreements</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Trademark registration (SAIP)</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Patent filing KSA</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> SASO certification support</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Legal advisory retainer</label>
+      </div>
+
+      <div class="sub-label">HR Consultation &amp; Recruitment</div>
+      <div class="options-grid">
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Org structure design</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Job descriptions &amp; grading</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> HR policy framework</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Employment contracts (KSA)</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> End-to-end recruitment</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Saudization compliance plan</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Expat visa &amp; Iqama processing</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Performance management</label>
+      </div>
+
+      <div class="sub-label">Managed HR &amp; Payroll</div>
+      <div class="options-grid">
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Payroll processing (WPS)</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> GOSI contributions management</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Leave &amp; attendance management</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> End-of-service calculations</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Employee onboarding/offboarding</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Monthly HR governance reporting</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Saudization tracking</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> HRIS / HR tech setup</label>
+      </div>
+
+      <div class="sub-label">Finance, Digital &amp; Operations</div>
+      <div class="options-grid">
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Accounting &amp; bookkeeping</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> VAT / Zakat registration &amp; filing</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Financial advisory</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Domain &amp; corporate email</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Arabic website / localization</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Vendor sourcing &amp; procurement</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Logistics &amp; import clearance</label>
+        <label class="option-item"><input type="checkbox" onchange="toggleSelected(this)"/> Operational advisory retainer</label>
+      </div>
+
+      <div class="nav-row">
+        <button type="button" class="btn btn-outline" onclick="prevSection('sec9','sec8')">← Back</button>
+        <button type="button" class="btn btn-primary" onclick="nextSection('sec9','sec10')">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ SECTION 10: Budget & Notes ════ -->
+  <div class="section-card" id="sec10">
+    <div class="section-head accent-water" onclick="toggleSection('sec10')">
+      <div class="section-num">10</div>
+      <div class="section-title">Budget, Engagement Model & Final Notes</div>
+      <div class="section-complete" id="comp10">✓</div>
+      <div class="section-chevron">▾</div>
+    </div>
+    <div class="section-body">
+      <div class="q-group">
+        <label class="q-label">Estimated budget for KSA market entry (Year 1 setup):</label>
+        <div class="options-grid">
+          <label class="option-item"><input type="radio" name="budget" onchange="toggleSelected(this)"/> Under SAR 100,000</label>
+          <label class="option-item"><input type="radio" name="budget" onchange="toggleSelected(this)"/> SAR 100K – 300K</label>
+          <label class="option-item"><input type="radio" name="budget" onchange="toggleSelected(this)"/> SAR 300K – 600K</label>
+          <label class="option-item"><input type="radio" name="budget" onchange="toggleSelected(this)"/> SAR 600K – 1M</label>
+          <label class="option-item"><input type="radio" name="budget" onchange="toggleSelected(this)"/> Over SAR 1,000,000</label>
+          <label class="option-item"><input type="radio" name="budget" onchange="toggleSelected(this)"/> To be determined post-proposal</label>
+        </div>
+      </div>
+      <div class="q-group">
+        <label class="q-label">Preferred engagement model with Synergy Hub SA:</label>
+        <div class="options-grid">
+          <label class="option-item"><input type="radio" name="engagement" onchange="toggleSelected(this)"/> One-time setup only</label>
+          <label class="option-item"><input type="radio" name="engagement" onchange="toggleSelected(this)"/> Monthly retainer</label>
+          <label class="option-item"><input type="radio" name="engagement" onchange="toggleSelected(this)"/> Full managed services</label>
+          <label class="option-item"><input type="radio" name="engagement" onchange="toggleSelected(this)"/> Full circle — setup to operations</label>
+          <label class="option-item"><input type="radio" name="engagement" onchange="toggleSelected(this)"/> Phased — define together</label>
+        </div>
+      </div>
+      <div class="q-group">
+        <label class="q-label">Any additional notes, questions, or specific concerns for Synergy Hub SA?</label>
+        <textarea placeholder="Share anything relevant — concerns about the KSA market, specific questions, context we should know, or anything else on your mind…" style="min-height: 120px;"></textarea>
+      </div>
+      <hr class="divider"/>
+      <div class="q-group">
+        <label class="q-label">Full Name (Declaration) *</label>
+        <input type="text" placeholder="Your full name" required/>
+      </div>
+      <div class="grid-2">
+        <div class="q-group">
+          <label class="q-label">Signature (type your name to confirm) *</label>
+          <input type="text" placeholder="Type full name as signature" required/>
+        </div>
+        <div class="q-group">
+          <label class="q-label">Date *</label>
+          <input type="text" id="dateField" placeholder="DD / MM / YYYY" required/>
+        </div>
+      </div>
+      <div class="nav-row">
+        <button type="button" class="btn btn-outline" onclick="prevSection('sec10','sec9')">← Back</button>
+        <button type="submit" class="btn btn-primary">Submit Questionnaire ✓</button>
+      </div>
+    </div>
+  </div>
+
+</form>
+
+<!-- ── Submit Card (shown after final section) ── -->
+<div class="submit-card" id="submit-prompt" style="display:none;">
+  <h3>Ready to Submit?</h3>
+  <p>Your responses have been captured. Click below to send your completed questionnaire to Synergy Hub SA.</p>
+  <button class="btn-submit" onclick="document.getElementById('qform').requestSubmit()">Submit to Synergy Hub SA →</button>
+</div>
+
+<!-- ── Thank You ── -->
+<div id="thank-you">
+  <div class="ty-icon">🌊</div>
+  <h2>Thank you, i-Water!</h2>
+  <p>Your questionnaire has been submitted. The Synergy Hub SA team will review your responses and be in touch within 24–48 hours to schedule your strategy session.<br/><br/><strong>O.Magbool@synergyhubsa.com</strong></p>
+</div>
+
+</div><!-- /main -->
+
+<footer class="site-footer">
+  Prepared by <strong>Synergy Hub SA</strong> · Saudi Arabia Market Entry Specialists · Confidential · May 2026
+</footer>
+
+<script>
+// Set today's date
+document.getElementById('dateField').value =
+  new Date().toLocaleDateString('en-GB').replace(/\//g, ' / ');
+
+const sections = ['sec1','sec2','sec3','sec4','sec5','sec6','sec7','sec8','sec9','sec10'];
+
+function toggleSection(id) {
+  const card = document.getElementById(id);
+  const head = card.querySelector('.section-head');
+  const body = card.querySelector('.section-body');
+  const isOpen = body.classList.contains('open');
+  // Close all
+  sections.forEach(s => {
+    const c = document.getElementById(s);
+    c.querySelector('.section-body').classList.remove('open');
+    c.querySelector('.section-head').classList.remove('open');
+  });
+  // Open clicked (if it was closed)
+  if (!isOpen) {
+    body.classList.add('open');
+    head.classList.add('open');
+    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  updateProgress();
+}
+
+function nextSection(current, next) {
+  document.getElementById(current).querySelector('.section-complete').classList.add('visible');
+  // Close current
+  document.getElementById(current).querySelector('.section-body').classList.remove('open');
+  document.getElementById(current).querySelector('.section-head').classList.remove('open');
+  // Open next
+  const nextCard = document.getElementById(next);
+  nextCard.querySelector('.section-body').classList.add('open');
+  nextCard.querySelector('.section-head').classList.add('open');
+  nextCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  updateProgress();
+  if (next === 'sec10') {
+    setTimeout(() => {
+      document.getElementById('submit-prompt').style.display = 'block';
+    }, 800);
+  }
+}
+
+function prevSection(current, prev) {
+  document.getElementById(current).querySelector('.section-body').classList.remove('open');
+  document.getElementById(current).querySelector('.section-head').classList.remove('open');
+  const prevCard = document.getElementById(prev);
+  prevCard.querySelector('.section-body').classList.add('open');
+  prevCard.querySelector('.section-head').classList.add('open');
+  prevCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  updateProgress();
+}
+
+function toggleSelected(input) {
+  const item = input.closest('.option-item');
+  if (input.type === 'radio') {
+    // Deselect siblings
+    const name = input.name;
+    document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
+      r.closest('.option-item').classList.remove('selected');
+    });
+  }
+  item.classList.toggle('selected', input.checked);
+}
+
+function updateProgress() {
+  const completed = document.querySelectorAll('.section-complete.visible').length;
+  const open = sections.findIndex(s =>
+    document.getElementById(s).querySelector('.section-body').classList.contains('open')
+  );
+  const current = open >= 0 ? open + 1 : completed + 1;
+  const pct = Math.min(100, Math.round((completed / sections.length) * 100));
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-text').textContent =
+    `Section ${Math.min(current, sections.length)} of ${sections.length}`;
+}
+
+async function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  submitBtn.textContent = 'Submitting…';
+  submitBtn.disabled = true;
+
+  // Build FormData with human-readable field names
+  const fd = new FormData();
+
+  function getLabel(el) {
+    const grp = el.closest('.q-group');
+    if (grp) {
+      const lbl = grp.querySelector('.q-label');
+      if (lbl) return lbl.textContent.trim().replace(' *','');
+    }
+    return el.name || el.placeholder || 'field';
+  }
+
+  // Text / email / tel / textarea
+  form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea').forEach(el => {
+    if (el.value.trim()) fd.append(getLabel(el), el.value.trim());
+  });
+
+  // Radio buttons (checked only, deduplicated by name)
+  const radiosDone = new Set();
+  form.querySelectorAll('input[type="radio"]:checked').forEach(el => {
+    if (!radiosDone.has(el.name)) {
+      radiosDone.add(el.name);
+      const txt = el.closest('.option-item') ? el.closest('.option-item').textContent.trim() : el.value;
+      fd.append(getLabel(el) || el.name, txt);
+    }
+  });
+
+  // Checkboxes grouped by label
+  const checkGroups = {};
+  form.querySelectorAll('input[type="checkbox"]:checked').forEach(el => {
+    const key = getLabel(el);
+    if (!checkGroups[key]) checkGroups[key] = [];
+    const txt = el.closest('.option-item') ? el.closest('.option-item').textContent.trim() : el.value;
+    checkGroups[key].push(txt);
+  });
+  Object.entries(checkGroups).forEach(([key, vals]) => {
+    fd.append(key, vals.join(' | '));
+  });
+
+  // Email subject line
+  fd.append('_subject', 'i-Water — Saudi Arabia Market Entry Questionnaire Submission');
+
+  try {
+    const res = await fetch('https://formspree.io/f/xgodpyqy', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: fd
+    });
+    if (res.ok) {
+      document.getElementById('form-area').style.display = 'none';
+      document.getElementById('thank-you').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const errData = await res.json().catch(() => ({}));
+      console.error('Formspree error:', errData);
+      alert('Submission failed. Please email your responses to O.Magbool@synergyhubsa.com directly.');
+      submitBtn.textContent = 'Submit Questionnaire ✓';
+      submitBtn.disabled = false;
+    }
+  } catch (err) {
+    console.error('Network error:', err);
+    alert('Network error. Please check your connection and try again.');
+    submitBtn.textContent = 'Submit Questionnaire ✓';
+    submitBtn.disabled = false;
+  }
+}
+
+updateProgress();
+</script>
+</body>
+</html>
